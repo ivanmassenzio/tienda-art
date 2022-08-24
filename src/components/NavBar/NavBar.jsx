@@ -1,12 +1,15 @@
-import './App.css';
+import React from 'react'
+import { CartWidget } from '../CartWidget/CartWidget'
+// import Boton from '../Boton/Boton'
+// import Form from '../Form/Form'
 
-function App() {
 
+function NavBar() {
   return (
-    <div id="" className="">
+    <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Navbar</a>
+    <a className="navbar-brand" href="#">Menu</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon" />
     </button>
@@ -28,11 +31,16 @@ function App() {
         </li>
       </ul>      
     </div>
-  </div>
+    </div>
+    {/* <Form boton={<Boton/>}/> */}
+    <CartWidget title="Reposera" subtitle="Para reposar"/>
 </nav>
 
-    </div>
-  );
+
+
+    </>
+    
+  )
 }
 
-export default App;
+export default NavBar
