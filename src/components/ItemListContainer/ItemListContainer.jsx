@@ -1,8 +1,13 @@
-export const ItemListContainer = ({title, subtitle}) => {
+import ItemCount from "../ItemCount/ItemCount";
+
+export const ItemListContainer = () => {
+    function onAdd(count){        
+        console.log(`Se han seleccionado ${count} productos`)
+    }
     return (
         <>
-        <h1>Nombre del producto: {title}</h1> 
-        <p>Descripcion: {subtitle}</p>       
+            <ItemCount stock={5} onAdd={onAdd}/>
+            
         </>
     );
 }

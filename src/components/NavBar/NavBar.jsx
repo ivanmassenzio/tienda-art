@@ -1,7 +1,7 @@
 import React from 'react'
 import { CartWidget } from '../CartWidget/CartWidget'
-// import Boton from '../Boton/Boton'
-// import Form from '../Form/Form'
+import Boton from '../Boton/Boton'
+import Form from '../Form/Form'
 
 
 function NavBar() {
@@ -32,7 +32,7 @@ function NavBar() {
       </ul>      
     </div>
     </div>
-    {/* <Form boton={<Boton/>}/> */}
+    <Form boton={<Boton/>}/>
     <CartWidget title="Reposera" subtitle="Para reposar"/>
 </nav>
 

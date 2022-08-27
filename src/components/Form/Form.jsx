@@ -1,6 +1,9 @@
 import React from 'react';
+import Boton from '../Boton/Boton';
+import password from '../../utils/Password';
 
 const Form = ({boton}) => {
+    password("pepito")
     return (
         <>
         <form className="d-flex">
