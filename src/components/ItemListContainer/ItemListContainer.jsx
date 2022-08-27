@@ -6,7 +6,7 @@ export const ItemListContainer = () => {
     }
     return (
         <>
-            <ItemCount stock={5} onAdd={onAdd} initial="1"/>
+            <ItemCount stock={5} onAdd={onAdd} initial={1}/>
             
         </>
     );
