@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export const ItemCount = ({stock, onAdd}) => {
-    const [count, setCount] = useState(0);
+export const ItemCount = ({stock, onAdd, initial}) => {
+    const [count, setCount] = useState(initial);
 
     function add(){
         if(count < stock){
