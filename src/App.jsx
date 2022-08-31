@@ -2,21 +2,17 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
-
-
-
-
 const App = () => {
   
   return (
     <>
       <NavBar />
-      <div className="row">
-        <div className="col d-flex justify-content-center">
-          <ItemListContainer />
+      <div className="container">
+        <div className="row">          
+            <ItemListContainer />
         </div>
       </div>
-      </>
+    </>
   );
 }
 
