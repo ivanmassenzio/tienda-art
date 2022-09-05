@@ -1,25 +1,44 @@
 import React, {useState, useEffect} from 'react'
 import { ItemList } from '../ItemList/ItemList'
-import itemdata from '../../data/itemdata'
-export const ItemListContainer = () => {
-    
-    const [productos, setProductos] = useState([])
-    const [isLoading,setIsLoading] = useState(true)
-  
-    useEffect(() => {   
-      const getProductData = new Promise((resolve, reject) => {
-          setTimeout (() => {
-              resolve(itemdata)              
-          }, 2000)
-      })
-          getProductData
-          .then((response) => {setProductos(response)})
-          .catch((err) => console.log(err))
-          .finally(() => setIsLoading(false))
-    }, [])    
-    return (isLoading ?
-         <h2>Cargando. . .</h2> :            
-                <ItemList list={productos}/>            
-    )
+import { products } from '../../data/itemdata'
+import { useParams } from 'react-router-dom';
+import { Orbit } from '@uiball/loaders'
 
-}
+
+
+
+export const ItemListContainer = () => {
+    const [productList, setProductList] = useState([])
+
+    const {categoria} = useParams()
+  
+    const getProducts = () => new Promise((resolve, reject) => {
+      if(categoria){
+        setTimeout(()=> resolve(products.filter(item => item.categoria === categoria)), 2000)
+      } else {
+        setTimeout(()=> resolve(products), 2000)
+      }
+
+    })
+  
+    useEffect(() => {
+      getProducts()
+      .then(products => setProductList(products))
+      .catch(error => console.error(error))  
+
+      return () => {
+      setProductList([])
+    }
+    }, [categoria])
+  
+    
+  
+    return (
+      <>
+      {
+        productList.length ? <ItemList productList={productList} /> : <Orbit size={35} color="#231F20" />
+      }      
+      </>
+    )
+  }
+  

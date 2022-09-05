@@ -1,14 +1,13 @@
 import React from 'react'
-import { Item } from '../Item/Item'
+import { Card } from '../Card/Card'
 
-export const ItemList = ({list}) => {  
+export const ItemList = ({productList}) => {
   return (
-    <>
-            {list.map( (productos, indice) => (  
-              <div className="col-md-4" key={productos.id}>
-                <Item productos={productos} key={productos.url} />
-              </div>              
-            ))}
-    </>
+    <div className='d-flex'>
+      {
+        productList.map(item => <Card key={item.id} item={item} />)
+      }
+    </div>
+
   )
 }
