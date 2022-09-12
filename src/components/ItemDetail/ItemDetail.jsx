@@ -1,8 +1,17 @@
-import { Count } from '../Count/Count'
 import './ItemDetail.css';
+import { useState } from 'react'
+import { ItemCount } from '../ItemCount/ItemCount'
+import { useCartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom'
 export const ItemDetail = ({item}) => {
+
+  const [goToCart, setGoToCart] = useState(false)
+  const {addProduct} = useCartContext()
+  
+  
   const onAdd = (quantity) => {
-    console.log(quantity)
+    setGoToCart(true)
+    addProduct(item, quantity)
   }
 
   return (
@@ -13,9 +22,16 @@ export const ItemDetail = ({item}) => {
         </div>        
           <div className="card-detail-right text-center">
             <h4>{item.title}</h4>
-            <p>Precio: ${item.precio}</p>
-            <p>Sotck: {item.stock}</p>
-            <Count stock={item.stock} initial={1} onAdd={onAdd}/>
+            
+            
+            {
+              goToCart ?
+                <div className="text-center">                  
+               <Link to='/cart'>Terminar Compra</Link>
+               </div>
+                :
+                 <ItemCount item={item} initial={1} onAdd={onAdd}/>
+            }
           </div>          
       </div>
     </>
