@@ -41,7 +41,7 @@ function NavBar() {
       </ul>      
     </div>
     </div>    
-    <CartWidget title="Reposera" subtitle="Para reposar"/>
+    <CartWidget/>
 </nav>
 
 
