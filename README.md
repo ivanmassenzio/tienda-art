@@ -1,5 +1,14 @@
 # Tienda de articulos de libreria
 
-### Se realizo el desafio 9 guardando el estado del carrito
+### 19/09/22 Desafio CartView
+
+- Se incorpora el desglose del carrito y el precio total.
+- Se agrega la ruta 'cart' al BrowserRouter.
+- Se muestran todos los items agregados y agrupados en el carrito.
+- De no haber items en el carrito se muestra un mensaje.
+- Se muestra en tiempo real la cantidad de items agregados en el CartWidget
 
 
+
+### 12/09/22 Desafio CartContext
+- Se guarda el estado del carrito
