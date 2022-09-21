@@ -38,6 +38,11 @@ function NavBar() {
           <p>Hojas</p>
         </li>
         </Link>
+        <Link to='/productos/utiles' className="nav-link">
+        <li className="nav-item">
+          <p>Utiles</p>
+        </li>
+        </Link>
       </ul>      
     </div>
     </div>    
