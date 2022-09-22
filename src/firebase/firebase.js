@@ -34,7 +34,8 @@ async function cargarBaseDeDatos  () {
 }
 
 const getProducto = async (id) => {
-  getDoc(doc(db,"products",id))
+  const item = getDoc(doc(db,"products",id))
+  return item
 }
 
 const getProductos = async () => {
