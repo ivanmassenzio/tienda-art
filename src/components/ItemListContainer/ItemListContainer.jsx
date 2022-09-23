@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { ItemList } from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom';
 import { Orbit } from '@uiball/loaders'
-import { getProductos, getProductosPorCategoria } from '../../firebase/firebase.js'
+import { getProductos, getProductosPorCategoria } from '../../../firebase/firebase.js'
 
 export const ItemListContainer = () => {
     const [productList, setProductList] = useState([])

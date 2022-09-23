@@ -3,7 +3,7 @@ import { products } from '../../data/itemdata'
 import { useParams} from 'react-router-dom';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { Orbit } from '@uiball/loaders'
-import { getProducto } from '../../firebase/firebase.js'
+import { getProducto } from '../../../firebase/firebase.js'
 
 
 export const ItemDetailContainer = () => {

@@ -1,4 +1,4 @@
-import './firebase/index.firebase.js'
+import '../firebase/firebase.JS'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
