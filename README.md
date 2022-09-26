@@ -1,5 +1,12 @@
 # Tienda de articulos de libreria
 
+
+### 26/09/22 Desafío: Item Collection II
+
+- Se integra con firebase
+- Se utiliza las operaciones de insercion para insertar orden y se retorna al usuario el id de la orden autogenerada
+
+
 ### 19/09/22 Desafio CartView
 
 - Se incorpora el desglose del carrito y el precio total.
