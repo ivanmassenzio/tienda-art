@@ -18,8 +18,6 @@ export const CartProvider = ({ children }) => {
             setCart([...cart, { ...item, quantity}])
         }
     }
-
-    console.log(cart)
     
     const clearCart = () => setCart([])
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false

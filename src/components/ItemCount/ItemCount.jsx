@@ -1,11 +1,10 @@
-import React, { useContext, useState } from 'react'
-import CartContext from '../../context/CartContext'
+import React, { useState } from 'react'
 
 export const ItemCount = ({item, initial, onAdd}) => {
 
     const [count, setCount] = useState(initial)
 
-    const {id, stock} = item
+    const {stock} = item
 
     const addCounter = () => {
         count < stock && setCount( count + 1 )

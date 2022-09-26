@@ -1,4 +1,4 @@
-import './.env'
+import '../.env'
 import { initializeApp } from "firebase/app";
 import { doc, collection, addDoc, getDoc, getDocs, query, where, deleteDoc, updateDoc, getFirestore } from "firebase/firestore";
 
@@ -17,24 +17,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore()
 
-async function cargarBaseDeDatos  () {
-    const promise = await fetch('../data/product.json')
-    const productos = await promise.json()
-    productos.forEach(async (producto) => {
-        await addDoc(collection(db, "productos"), {
-            title: producto.title,
-            description: producto.description,
-            precio: producto.precio,
-            stock: producto.stock,
-            img: "",
-            categoria: producto.categoria
-          });
-    })
-    
-}
-
 const getProducto = async (id) => {
-  const item = getDoc(doc(db,"products",id))
+  const item = await getDoc(doc(db,"products",id))
   return item
 }
 
@@ -47,7 +31,12 @@ const getProductosPorCategoria = async (categoria) => {
   const productos = await query(collection(db,"products"), where("categoria","==",categoria))
   const col = await getDocs(productos)
   return col
-  
 }
 
-export {db,app, cargarBaseDeDatos, getProducto, getProductos, getProductosPorCategoria}
+const genOrder = async (data) => {
+  const col = collection(db,"orders")
+  const order = await addDoc(col, data)
+  return order
+}
+
+export {db,app, getProducto, getProductos, getProductosPorCategoria, genOrder}
