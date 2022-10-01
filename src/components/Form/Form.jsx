@@ -3,6 +3,11 @@ import React from 'react';
 export const Form = ({ buyer, handleSubmit,handleInputChange }) => {
     const { Nombre, Email, Telefono} = buyer
     
+    // Funcion para habilitar el boton de Finalizar Compra cuando esten completos todos los campos
+    const validate = () => {
+        return Nombre.length & Email.length & Telefono.length
+    }
+
     return (
         <>
             <h4>Completar Datos:</h4>
@@ -30,7 +35,7 @@ export const Form = ({ buyer, handleSubmit,handleInputChange }) => {
                     />
                     <br />
                     <br />
-                    <input type="submit" value="Finalizar Compra" className='btn btn-success'/>
+                    <input disabled={!validate()} type="submit" value="Finalizar Compra" className='btn btn-success'/>
                 </form>
         </>
     );
